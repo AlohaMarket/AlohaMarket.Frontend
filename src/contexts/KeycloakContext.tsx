@@ -12,6 +12,12 @@ const eventLogger = (event: unknown, error: unknown) => {
 
 const tokenLogger = (tokens: unknown) => {
      console.log('onKeycloakTokens', tokens);
+     
+     // Update tokens in localStorage when they change
+     if (keycloak.token && keycloak.refreshToken) {
+          localStorage.setItem('token', keycloak.token);
+          localStorage.setItem('refreshToken', keycloak.refreshToken);
+     }
 };
 
 export function KeycloakProvider({ children }: KeycloakProviderProps) {
