@@ -16,13 +16,18 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
-    "@tanstack/react-query": "^5.62.7",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@react-keycloak/web": "^3.4.0",
+    "@tanstack/react-query": "^5.79.0",
     "@tanstack/react-query-devtools": "^5.62.7",
     "aloha-market": "file:",
     "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "i18next": "^24.2.0",
     "i18next-browser-languagedetector": "^8.0.2",
+    "keycloak-js": "^26.2.0",
+    "lucide-react": "^0.400.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.54.2",
@@ -30,11 +35,8 @@
     "react-i18next": "^15.2.0",
     "react-router-dom": "^7.1.1",
     "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
     "yup": "^1.6.0"
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.1",
-    "lucide-react": "^0.400.0",
-    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -58,7 +60,6 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.15",
-
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",

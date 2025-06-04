@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { APP_CONFIG } from '@/constants';
+import { useAuth } from '@/contexts';
 
 export default function Header() {
   const { t } = useTranslation();
+  const { isAuthenticated, login, logout } = useAuth();
 
   return (
     <header className="bg-white shadow-sm border-b">
@@ -13,15 +15,21 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <span>{t('footer.followUs')}</span>
           </div>
-          <div className="flex items-center space-x-4">
-            <Link to="/login" className="hover:text-primary-500">
+          {!isAuthenticated ? (
+            <button
+              onClick={login}
+              className="text-gray-700 hover:text-primary-500"
+            >
               {t('navigation.login')}
-            </Link>
-            <span>|</span>
-            <Link to="/register" className="hover:text-primary-500">
-              {t('navigation.register')}
-            </Link>
-          </div>
+            </button>
+          ) : (
+            <button
+              onClick={logout}
+              className="text-gray-700 hover:text-primary-500"
+            >
+              {t('navigation.logout')}
+            </button>
+          )}
         </div>
 
         {/* Main header */}
